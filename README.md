@@ -78,23 +78,17 @@ VPMS follows a modular full-stack architecture:
 ### High-Level Architecture
 
 ```mermaid
-flowchart LR
-    U[Users: Admin | Staff | Customer] --> FE[React Frontend]
-    FE -->|HTTP + JWT| API[ASP.NET Core API]
+flowchart TD
+    U[Users: Admin, Staff, Customer] --> FE[Frontend: React + Vite]
+    FE --> API[Backend API: ASP.NET Core]
 
-    API --> C[Controllers]
-    C --> S[Services]
-    S --> DB[(PostgreSQL via EF Core)]
+    API --> AUTH[Authentication: JWT + Identity]
+    API --> CTRL[Controllers]
+    CTRL --> SRV[Services]
+    SRV --> DATA[Data Layer: EF Core + AppDbContext]
+    DATA --> DB[(PostgreSQL)]
 
-    S --> SMTP[SMTP Email Service]
-
-    subgraph Backend Modules
-      C
-      S
-      EF[AppDbContext + Models]
-    end
-
-    API --> EF
+    SRV --> EMAIL[Email Service: SMTP]
 ```
 
 ### Request Flow
