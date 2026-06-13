@@ -292,7 +292,7 @@ Potential next improvements:
 - Add CI workflow for build, lint, and test automation
 - Introduce secrets vault integration and config hardening
 
-## Recruiter-Focused Project Highlights
+## Technical Highlights
 
 This project demonstrates:
 
