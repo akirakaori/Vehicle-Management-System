@@ -62,7 +62,7 @@ function App() {
 
   useEffect(() => {
     const handleUnauthorized = () => {
-      // Don't show error if user is intentionally logging out
+      // Don't show error if user is intentionally logging out show if not only 
       if (isLoggingOut.current) {
         return;
       }

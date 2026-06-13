@@ -111,7 +111,7 @@ export function VerifyOtpPage({ onContinue, onBack, onMissingEmail }) {
               disabled={isLoading}
             >
               <ArrowLeft size={16} />
-              <span>Back to Email</span>
+              <span>Back to Email...</span>
             </button>
           </div>
         </div>
